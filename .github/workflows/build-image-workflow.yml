@@ -1,8 +1,8 @@
 name: Build and Deploy
 on: push
 env:
-  IMAGE_NAME: <IMAEG_NAME>
-  GCLOUD_PROJECT_ID: <CLOUD_PROJECT_ID>
+  IMAGE_NAME: <IMAGE_NAME>
+  GCLOUD_PROJECT_ID: <PROJECT_NAME>
 jobs:
   build:
     name: Build
@@ -17,9 +17,8 @@ jobs:
           username: _json_key
           password: ${{ secrets.CLOUDRUN_SA }}
           registry: asia.gcr.io
-          image_name: $IMAGE_NAME
+          image_name: <PROJECT_ID>/<IMAGE_NAME>
           push_git_tag: true
-          tag: latest
       - name: Secret Injector
         run: |
           echo "LINE_CHANNEL_ACCESS_TOKEN=${{ secrets.LINE_ACCESS_TOKEN }}" >> key.env && \
@@ -28,9 +27,9 @@ jobs:
       - name: cloudrun
         uses: hackinteach/action-cloud-run@v1.0
         with:
-          image: $IMAGE_NAME
-          service: <RUN_SERVICE_NAME>
-          project: $GCLOUD_PROJECT_ID
+          image: asia.gcr.io/<PROJECT_ID>/<IMAGE_NAME>
+          service: linebot
+          project: <PROJECT_ID>
           region: asia-southeast1
           env: key.env
           service key: ${{ secrets.CLOUDRUN_SA }} # base64-encoded
