@@ -2,7 +2,6 @@ from typing import List, Union, Optional
 
 from linebot.models import SendMessage, TextSendMessage
 
-from knowledge.models import Knowledge
 from utils.message_factory import KnowledgeMessageFactory
 from utils.postback import MenuActionData
 from utils.postback.action_meta import ActionData
@@ -20,9 +19,6 @@ class PostbackParser:
         if isinstance(action, MenuActionData):
             factory = KnowledgeMessageFactory(topic=action.topic)
             message = factory.get_return_flex_message(page_number=1)
-        elif isinstance(action, AskActionData):
-            kl: Knowledge = Knowledge.objects.get(pk=action.knowledge_id)
-            message = TextSendMessage(text=kl.answer)
         elif isinstance(action, MoreActionData):
             factory = KnowledgeMessageFactory(action.topic)
             message = factory.get_return_flex_message(page_number=action.page)

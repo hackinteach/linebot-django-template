@@ -14,7 +14,6 @@ if [ "$DJANGO_MANAGEPY_MIGRATE" = 'xon' ]; then
     python manage.py migrate --noinput
     python manage.py loaddata LineBotBackend/fixtures/user.json
     # remove line below on production
-    python manage.py loaddata knowledge/fixtures/init.json
     python manage.py collectstatic --noinput
 fi
 

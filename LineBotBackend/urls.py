@@ -25,7 +25,6 @@ admin.site.site_title = _("Bot Knowledge Manager")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bot/', include('bot.urls')),
-    path('knowledge/', include('knowledge.urls')),
     path('', include('home.urls'))
 ]
 
