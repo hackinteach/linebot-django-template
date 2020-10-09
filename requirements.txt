@@ -1,0 +1,11 @@
+line-bot-sdk
+Django==3.0.7
+djangorestframework==3.10.3
+psycopg2>=2.7,<3.0
+dj-database-url==0.5.0
+uwsgi
+requests
+django-cors-middleware
+django-safedelete
+shortuuid==1.0.1
+gunicorn
