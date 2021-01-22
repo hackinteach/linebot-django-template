@@ -1,0 +1,38 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+flake8 = "*"
+pytest-cov = "*"
+pytest-env = "*"
+pytest = "*"
+autopep8 = "*"
+djangorestframework = "*"
+psycopg2-binary = ">=2.8"
+django-storages = "*"
+drf-yasg = "*"
+arrow = "*"
+dj-database-url = "*"
+djangorestframework-camel-case = "*"
+google-auth-oauthlib = "*"
+python-dotenv = "*"
+drf-jwt = "*"
+requests = "*"
+django-cors-middleware = "*"
+django-safedelete = "*"
+shortuuid = "*"
+gunicorn = "*"
+pytest-django = "*"
+django-health-check = "*"
+Django = "*"
+uWSGI = "*"
+drf-nested-routers = "*"
+django-extensions = "*"
+pytest-order = "*"
+django-filter = "*"
+line-bot-sdk = "*"
+
+[requires]
+python_version = "3.7"
