@@ -33,6 +33,7 @@ django-extensions = "*"
 pytest-order = "*"
 django-filter = "*"
 line-bot-sdk = "*"
+pytest-mock = "*"
 
 [requires]
 python_version = "3.7"
