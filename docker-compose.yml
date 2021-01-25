@@ -6,11 +6,14 @@ services:
     ports:
       - 5434:5432
     environment:
-      POSTGRES_PASSWORD: password1234
+      POSTGRES_PASSWORD: milanomilano
       POSTGRES_DB: test
-#  backend:
-#    build: .
-#    ports:
-#      - 5000:5000
-#    environment:
-#      PORT: 5000
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+  backend:
+    build: .
+    command: python manage.py runserver 0.0.0.0:5000
+    ports:
+      - 5001:5000
+    environment:
+      DATABASE_URL: postgres://postgres:milanomilano@postgres:5432/test
