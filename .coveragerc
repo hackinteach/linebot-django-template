@@ -1,0 +1,10 @@
+[run]
+relative_files = True
+source = .
+omit =
+  *migrations/*,
+  *settings*,
+  *tests*,
+  *wsgi*,
+  manage.py
+  **log*
