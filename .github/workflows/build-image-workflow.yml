@@ -15,7 +15,7 @@ jobs:
         uses: whoan/docker-build-with-cache-action@v5
         with:
           username: _json_key
-          password: ${{ secrets.CLOUDRUN_SA }}
+          password: ${{ secrets.GCR_JSON }}
           registry: asia.gcr.io
           image_name: <PROJECT_ID>/<IMAGE_NAME>
           push_git_tag: true
